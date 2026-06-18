@@ -1,36 +1,89 @@
 <div class="home-page">
-  <header class="location-bar">
+  <header class="top-header">
     <div>
-      <span class="pin">●</span>
-      <span class="label">Chosen Location</span>
-      <strong>Bhopal</strong>
-      <span>⌄</span>
+      <p class="eyebrow">Chosen location</p>
+      <h1>Bhopal</h1>
     </div>
+
+    <button class="profile-button" aria-label="Profile">
+      <span></span>
+    </button>
   </header>
 
-  <nav class="categories">
-    <button class="active">All</button>
-    <button>Meals</button>
-    <button>Breads & Pastries</button>
-  </nav>
+  <section class="search-card">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21 21l-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+    </svg>
+
+    <input type="text" placeholder="Search bakeries or boxes" />
+  </section>
+
+  <section class="categories-section">
+    <div class="section-header">
+      <h2>Categories</h2>
+    </div>
+
+    <div class="category-row">
+
+      <button class="category-card active">
+        <span class="category-icon bread"></span>
+        <strong>Bread</strong>
+      </button>
+
+      <button class="category-card">
+        <span class="category-icon croissant"></span>
+        <strong>Pastries</strong>
+      </button>
+
+      <button class="category-card">
+        <span class="category-icon sandwich"></span>
+        <strong>Sandwiches</strong>
+      </button>
+
+      <button class="category-card">
+        <span class="category-icon cake"></span>
+        <strong>Sweets</strong>
+      </button>
+
+    </div>
+
+  <section class="section-header">
+    <h2>Today's best deals</h2>
+    <a>See all</a>
+  </section>
+
+  <section class="deal-card" routerLink="/store/1">
+    <div>
+      <p class="deal-label">Up to 75% off</p>
+      <h3>Sweet Corner Bakery</h3>
+      <p class="deal-description">Mixed bakery box available for pickup tonight.</p>
+
+      <div class="deal-price">
+        <strong>€5</strong>
+        <del>€20</del>
+      </div>
+    </div>
+
+    <img src="/cup.png" alt="Sweet Corner Bakery">
+  </section>
 
   <section class="section-header">
     <h2>Recommended for you</h2>
-    <a>See all →</a>
+    <a>See all</a>
   </section>
 
   <div class="cards-row">
     <article class="food-card" routerLink="/store/1">
-      <img src="/store1.jpg" alt="Sweet Corner Bakery">
+      <img src="/kritikos.png" alt="Sweet Corner Bakery">
 
       <div class="card-body">
         <div class="title-row">
           <h3>Sweet Corner</h3>
-          <span>4.5 ★</span>
+          <span>4.5</span>
         </div>
 
         <p>Sweet box · Bread box</p>
-        <small>Pickup 19:00 - 22:00 · 1.2KM</small>
+        <small>Pickup 19:00 - 22:00 · 1.2 km</small>
 
         <div class="price-row">
           <strong>€5</strong>
@@ -40,16 +93,16 @@
     </article>
 
     <article class="food-card" routerLink="/store/2">
-      <img src="/store2.jpg" alt="Morning Dough">
+      <img src="/cup.png" alt="Morning Dough">
 
       <div class="card-body">
         <div class="title-row">
           <h3>Morning Dough</h3>
-          <span>4.7 ★</span>
+          <span>4.7</span>
         </div>
 
         <p>Sandwich box · Pastry box</p>
-        <small>Pickup 19:30 - 22:00 · 2KM</small>
+        <small>Pickup 19:30 - 22:00 · 2 km</small>
 
         <div class="price-row">
           <strong>€6</strong>
@@ -60,45 +113,96 @@
   </div>
 
   <section class="section-header">
+    <h2>Nearby stores</h2>
+    <a>See all</a>
+  </section>
+
+  <section class="nearby-list">
+    <article class="nearby-card" routerLink="/store/1">
+      <img src="/kritikos.png" alt="Sweet Corner Bakery">
+
+      <div>
+        <h3>Sweet Corner Bakery</h3>
+        <p>Bread · Pastries</p>
+        <small>0.8 km away</small>
+      </div>
+
+      <strong>€5</strong>
+    </article>
+
+    <article class="nearby-card" routerLink="/store/2">
+      <img src="/cup.png" alt="Morning Dough">
+
+      <div>
+        <h3>Morning Dough</h3>
+        <p>Sandwiches · Sweets</p>
+        <small>1.4 km away</small>
+      </div>
+
+      <strong>€6</strong>
+    </article>
+
+    <article class="nearby-card" routerLink="/store/3">
+      <img src="/veneris.png" alt="Golden Crust">
+
+      <div>
+        <h3>Golden Crust</h3>
+        <p>Bread · Mixed boxes</p>
+        <small>2.1 km away</small>
+      </div>
+
+      <strong>€5</strong>
+    </article>
+  </section>
+
+  <section class="section-header">
     <h2>New surprise bags</h2>
-    <a>See all →</a>
+    <a>See all</a>
   </section>
 
   <div class="surprise-grid">
     <div class="surprise-card">
-      <span>new</span>
+      <p>3 available</p>
       <h3>Bread Box</h3>
-      <p>Fresh bread selection</p>
+      <span>Fresh bread selection</span>
       <strong>€5</strong>
     </div>
 
     <div class="surprise-card">
-      <span>2 left</span>
+      <p>2 available</p>
       <h3>Pastry Box</h3>
-      <p>Croissants and sweets</p>
+      <span>Croissants and sweets</span>
       <strong>€7</strong>
     </div>
   </div>
 
-    <nav class="bottom-nav">
+  <nav class="bottom-nav">
     <button class="nav-item active">
-        <span class="nav-icon"></span>
-        <small>Home</small>
+      <svg viewBox="0 0 24 24">
+        <path d="M3 10.8 12 3l9 7.8V21h-6v-6H9v6H3V10.8z"/>
+      </svg>
+      <small>Home</small>
     </button>
 
     <button class="nav-item">
-        <span class="nav-icon search"></span>
-        <small>Search</small>
+      <svg viewBox="0 0 24 24">
+        <path d="M21 21l-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+      </svg>
+      <small>Search</small>
     </button>
 
     <button class="nav-item">
-        <span class="nav-icon heart"></span>
-        <small>Favorites</small>
+      <svg viewBox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/>
+      </svg>
+      <small>Favorites</small>
     </button>
 
     <button class="nav-item">
-        <span class="nav-icon orders"></span>
-        <small>Orders</small>
+      <svg viewBox="0 0 24 24">
+        <path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"/>
+        <path d="M9 7h6M9 11h6M9 15h4"/>
+      </svg>
+      <small>Orders</small>
     </button>
-    </nav>
-</div>
+  </nav>
