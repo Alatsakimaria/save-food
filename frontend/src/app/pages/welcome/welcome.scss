@@ -1,0 +1,83 @@
+.welcome-page {
+  min-height: 100vh;
+  width: 100%;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding: 0 28px 42px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(7, 7, 7, 0.35),
+      rgba(7, 7, 7, 0.58),
+      rgba(7, 7, 7, 0.9)
+    ),
+    url('/welcomepage.jpg');
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #0b0b0b;
+
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.content {
+  width: 100%;
+  max-width: 390px;
+  text-align: center;
+  z-index: 2;
+}
+
+h1 {
+  color: hsl(29, 14%, 69%);
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
+}
+
+p {
+  color: hsl(29, 25%, 81%);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  margin-bottom: 24px;
+}
+
+.signin-btn {
+  width: 100%;
+  padding: 17px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #783f0ab7;
+  color: hsl(29, 25%, 81%);
+
+  font-size: 16px;
+  font-weight: 800;
+
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
+}
+
+.signup-text {
+  margin-top: 18px;
+  margin-bottom: 0;
+
+  font-size: 13px;
+  font-weight: 500;
+  color: hsl(29, 14%, 69%);
+}
+
+.signup-text span {
+  color: hsl(29, 25%, 81%);
+  font-weight: 800;
+  text-decoration: underline;
+}
