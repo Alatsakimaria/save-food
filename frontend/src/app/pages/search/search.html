@@ -1,0 +1,120 @@
+<div class="search-page">
+
+  <header class="search-header">
+
+    <div class="search-input">
+
+      <svg viewBox="0 0 24 24">
+        <path d="M21 21l-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+      </svg>
+
+      <input
+        type="text"
+        placeholder="Search bakery, bread, pastry..."
+      />
+
+    </div>
+
+  </header>
+
+  <section class="filters">
+
+    <button class="active">All</button>
+    <button>Bread</button>
+    <button>Pastries</button>
+    <button>Sandwiches</button>
+    <button>Sweets</button>
+
+  </section>
+
+  <section class="recent-searches">
+
+    <h2>Recent searches</h2>
+
+    <div class="search-chip">
+      Sweet Corner Bakery
+    </div>
+
+    <div class="search-chip">
+      Bread Box
+    </div>
+
+    <div class="search-chip">
+      Pastry Box
+    </div>
+
+  </section>
+
+  <section class="search-results">
+
+    <h2>Nearby stores</h2>
+
+    <article class="store-result">
+
+      <img src="/store1.jpg">
+
+      <div>
+
+        <h3>Sweet Corner Bakery</h3>
+
+        <p>Sweet box · Bread box</p>
+
+        <small>0.8 km away</small>
+
+      </div>
+
+      <strong>€5</strong>
+
+    </article>
+
+    <article class="store-result">
+
+      <img src="/store2.jpg">
+
+      <div>
+
+        <h3>Morning Dough</h3>
+
+        <p>Pastries · Sandwiches</p>
+
+        <small>1.2 km away</small>
+
+      </div>
+
+      <strong>€6</strong>
+
+    </article>
+
+    </section>
+    <nav class="bottom-nav">
+    <button class="nav-item" routerLink="/home">
+        <svg viewBox="0 0 24 24">
+        <path d="M3 10.8 12 3l9 7.8V21h-6v-6H9v6H3V10.8z"/>
+        </svg>
+        <small>Home</small>
+    </button>
+
+    <button class="nav-item active">
+        <svg viewBox="0 0 24 24">
+        <path d="M21 21l-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+        </svg>
+        <small>Search</small>
+    </button>
+
+    <button class="nav-item">
+        <svg viewBox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/>
+        </svg>
+        <small>Favorites</small>
+    </button>
+
+    <button class="nav-item">
+        <svg viewBox="0 0 24 24">
+        <path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"/>
+        <path d="M9 7h6M9 11h6M9 15h4"/>
+        </svg>
+        <small>Orders</small>
+    </button>
+    </nav>
+
+</div>
