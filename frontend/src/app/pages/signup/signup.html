@@ -4,26 +4,63 @@
 
     <p>Join Save Food and start rescuing bakery boxes.</p>
 
-    <form>
-      <input type="text" placeholder="Full name">
-      <input type="text" placeholder="Username">
-      <input type="email" placeholder="Email">
-      <input type="password" placeholder="Password">
+    <form (ngSubmit)="createAccount()">
+      <input
+        type="text"
+        placeholder="Full name"
+        name="fullName"
+        [(ngModel)]="fullName"
+      >
+
+      <input
+        type="text"
+        placeholder="Username"
+        name="username"
+        [(ngModel)]="username"
+      >
+
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        [(ngModel)]="email"
+      >
+
+      <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        [(ngModel)]="password"
+      >
 
       <div class="role-box">
         <label>
-          <input type="radio" name="role" checked>
+          <input
+            type="radio"
+            name="role"
+            value="CUSTOMER"
+            [(ngModel)]="role"
+          >
           Customer
         </label>
 
         <label>
-          <input type="radio" name="role">
+          <input
+            type="radio"
+            name="role"
+            value="BAKERY"
+            [(ngModel)]="role"
+          >
           Bakery Owner
         </label>
       </div>
 
-      <button type="submit" class="signup-btn">
-        Create Account
+      <p class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </p>
+
+      <button type="submit" class="signup-btn" [disabled]="isLoading">
+        {{ isLoading ? 'Creating account...' : 'Create Account' }}
       </button>
     </form>
 

@@ -13,7 +13,7 @@
       to bottom,
       rgba(7, 7, 7, 0.35),
       rgba(7, 7, 7, 0.58),
-      rgba(7, 7, 7, 0.92)
+      rgba(7, 7, 7, 0.94)
     ),
     url('/welcomepage.jpg');
 
@@ -32,35 +32,31 @@
 
 h1 {
   color: hsl(29, 14%, 69%);
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 800;
   margin-bottom: 10px;
 }
 
 p {
   color: hsl(29, 25%, 81%);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .input-group {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 input {
   width: 100%;
-
-  padding: 16px 18px;
+  padding: 15px 18px;
 
   border-radius: 14px;
-
   border: 1px solid rgba(255,255,255,.08);
 
   background: rgba(255,255,255,.06);
-
   backdrop-filter: blur(8px);
 
   color: white;
-
   font-size: 15px;
 }
 
@@ -75,35 +71,54 @@ input:focus {
 
 .login-btn {
   width: 100%;
-
-  margin-top: 12px;
-
   padding: 17px;
 
   border: none;
   border-radius: 14px;
 
   background: #783f0ab7;
-
   color: hsl(29, 25%, 81%);
 
   font-size: 16px;
   font-weight: 800;
 
-  cursor: pointer;
-
   box-shadow: 0 16px 35px rgba(0,0,0,.35);
+  cursor: pointer;
+}
+
+.login-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ffb7b7;
+  font-size: 13px;
+  margin: 0 0 14px;
+  text-align: center;
 }
 
 .signup-text {
   text-align: center;
-  margin-top: 24px;
+  margin-top: 22px;
+  margin-bottom: 0;
   font-size: 13px;
 }
 
 .signup-text span {
   color: hsl(29, 25%, 81%);
   text-decoration: underline;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
+}  
+
+.error-message {
+  color: #ffb7b7;
+  font-size: 13px;
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.login-btn:disabled {
+  opacity: 0.65;
 }
