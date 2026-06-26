@@ -1,12 +1,25 @@
 <div class="home-page">
   <header class="top-header">
-    <div>
-      <p class="eyebrow">Chosen location</p>
-      <h1>Bhopal</h1>
+    <div class="location-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11z"/>
+        <circle cx="12" cy="10" r="2.5"/>
+      </svg>
     </div>
 
-    <button class="profile-button" aria-label="Profile">
-      <span></span>
+    <div class="location-text">
+      <p class="eyebrow">Current location</p>
+
+      <div class="location-title">
+        <h1>Heraklion, Crete</h1>
+        <svg viewBox="0 0 24 24">
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </div>
+    </div>
+
+    <button class="profile-button" aria-label="Save Food">
+      <img src="/logo.png" alt="Save Food">
     </button>
   </header>
 
@@ -26,26 +39,27 @@
     <div class="category-row">
 
       <button class="category-card active">
-        <span class="category-icon bread"></span>
+        <img src="bread.jpg" alt="Bread" />
         <strong>Bread</strong>
       </button>
 
       <button class="category-card">
-        <span class="category-icon croissant"></span>
+        <img src="pastries.png" alt="Pastries" />
         <strong>Pastries</strong>
       </button>
 
       <button class="category-card">
-        <span class="category-icon sandwich"></span>
+        <img src="sandwiches.png" alt="Sandwiches" />
         <strong>Sandwiches</strong>
       </button>
 
       <button class="category-card">
-        <span class="category-icon cake"></span>
+        <img src="cakes.svg" alt="Sweets" />
         <strong>Sweets</strong>
       </button>
-
+    
     </div>
+  </section>
 
   <section class="section-header">
     <h2>Today's best deals</h2>
@@ -54,7 +68,7 @@
 
   <section class="deal-card" routerLink="/store/1">
     <div>
-      <p class="deal-label">Up to 75% off</p>
+      <span class="deal-badge">75% OFF</span>
       <h3>Sweet Corner Bakery</h3>
       <p class="deal-description">Mixed bakery box available for pickup tonight.</p>
 
