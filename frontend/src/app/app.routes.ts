@@ -4,11 +4,14 @@ import { Signin } from './pages/signin/signin';
 import { Signup } from './pages/signup/signup';
 import { Home } from './pages/home/home';
 import { Search } from './pages/search/search';
+import { BestDeals } from './pages/best-deals/best-deals';
+
 
 export const routes: Routes = [
   { path: '', component: Welcome },
   { path: 'signin', component: Signin },
   { path: 'signup', component: Signup },
   { path: 'home', component: Home },
-  { path: 'search', component: Search }
+  { path: 'search', component: Search },
+  { path: 'best-deals', component: BestDeals }
 ];

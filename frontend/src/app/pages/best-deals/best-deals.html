@@ -1,0 +1,52 @@
+<div class="best-page">
+  <header class="page-header">
+    <button routerLink="/home" class="back-button">
+      <svg viewBox="0 0 24 24">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+
+    <div>
+      <p>Save Food</p>
+      <h1>Today's Best Deals</h1>
+    </div>
+  </header>
+
+  <section class="filter-row">
+    <button
+      *ngFor="let category of categories"
+      [ngClass]="{ active: selectedCategory === category }"
+      (click)="selectCategory(category)"
+    >
+      {{ category }}
+    </button>
+  </section>
+
+  <section class="deal-list">
+    <article
+      class="deal-card"
+      *ngFor="let deal of filteredDeals"
+      [routerLink]="['/store', deal.id]"
+    >
+      <div class="image-box">
+        <img [src]="deal.image" [alt]="deal.store">
+      </div>
+
+      <div class="deal-content">
+        <div class="deal-top">
+          <span>{{ deal.discount }}</span>
+          <small>{{ deal.rating }}</small>
+        </div>
+
+        <h2>{{ deal.store }}</h2>
+        <p>{{ deal.box }}</p>
+        <small class="pickup">Pickup {{ deal.pickup }}</small>
+
+        <div class="price">
+          <strong>€{{ deal.price }}</strong>
+          <del>€{{ deal.oldPrice }}</del>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>

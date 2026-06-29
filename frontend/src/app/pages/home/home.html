@@ -37,39 +37,27 @@
     </div>
 
     <div class="category-row">
-
-      <button class="category-card active">
-        <img src="bread.jpg" alt="Bread" />
-        <strong>Bread</strong>
+      <button
+        class="category-card"
+        *ngFor="let category of categories"
+        [ngClass]="{ active: selectedCategory === category.name }"
+        (click)="selectCategory(category.name)"
+      >
+        <img [src]="category.image" [alt]="category.name" />
+        <strong>{{ category.name }}</strong>
       </button>
-
-      <button class="category-card">
-        <img src="pastries.png" alt="Pastries" />
-        <strong>Pastries</strong>
-      </button>
-
-      <button class="category-card">
-        <img src="sandwiches.png" alt="Sandwiches" />
-        <strong>Sandwiches</strong>
-      </button>
-
-      <button class="category-card">
-        <img src="cakes.svg" alt="Sweets" />
-        <strong>Sweets</strong>
-      </button>
-    
     </div>
   </section>
 
   <section class="section-header">
     <h2>Today's best deals</h2>
-    <a>See all</a>
+    <a routerLink="/best-deals">See all</a>
   </section>
 
   <section class="deal-card" routerLink="/store/1">
     <div>
       <span class="deal-badge">75% OFF</span>
-      <h3>Sweet Corner Bakery</h3>
+      <h3>Sweet House Bakery</h3>
       <p class="deal-description">Mixed bakery box available for pickup tonight.</p>
 
       <div class="deal-price">
@@ -78,7 +66,7 @@
       </div>
     </div>
 
-    <img src="/cup.png" alt="Sweet Corner Bakery">
+    <img src="/cup.png" alt="Sweet House Bakery">
   </section>
 
   <section class="section-header">
@@ -87,40 +75,25 @@
   </section>
 
   <div class="cards-row">
-    <article class="food-card" routerLink="/store/1">
-      <img src="/kritikos.png" alt="Sweet Corner Bakery">
+    <article
+      class="food-card"
+      *ngFor="let store of filteredStores"
+      [routerLink]="['/store', store.id]"
+    >
+      <img [src]="store.image" [alt]="store.name">
 
       <div class="card-body">
         <div class="title-row">
-          <h3>Sweet Corner</h3>
-          <span>4.5</span>
+          <h3>{{ store.name }}</h3>
+          <span>{{ store.rating }}</span>
         </div>
 
-        <p>Sweet box · Bread box</p>
-        <small>Pickup 19:00 - 22:00 · 1.2 km</small>
+        <p>{{ store.description }}</p>
+        <small>Pickup {{ store.pickup }} · {{ store.distance }}</small>
 
         <div class="price-row">
-          <strong>€5</strong>
-          <del>€20</del>
-        </div>
-      </div>
-    </article>
-
-    <article class="food-card" routerLink="/store/2">
-      <img src="/cup.png" alt="Morning Dough">
-
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Morning Dough</h3>
-          <span>4.7</span>
-        </div>
-
-        <p>Sandwich box · Pastry box</p>
-        <small>Pickup 19:30 - 22:00 · 2 km</small>
-
-        <div class="price-row">
-          <strong>€6</strong>
-          <del>€18</del>
+          <strong>€{{ store.price }}</strong>
+          <del>€{{ store.oldPrice }}</del>
         </div>
       </div>
     </article>
@@ -133,10 +106,10 @@
 
   <section class="nearby-list">
     <article class="nearby-card" routerLink="/store/1">
-      <img src="/kritikos.png" alt="Sweet Corner Bakery">
+      <img src="/kritikos.png" alt="Kritikos Fournos Bakery">
 
       <div>
-        <h3>Sweet Corner Bakery</h3>
+        <h3>Kritikos Fournos Bakery</h3>
         <p>Bread · Pastries</p>
         <small>0.8 km away</small>
       </div>
@@ -145,10 +118,10 @@
     </article>
 
     <article class="nearby-card" routerLink="/store/2">
-      <img src="/cup.png" alt="Morning Dough">
+      <img src="/cup.png" alt="Sweet House Bakery">
 
       <div>
-        <h3>Morning Dough</h3>
+        <h3>Sweet House Bakery</h3>
         <p>Sandwiches · Sweets</p>
         <small>1.4 km away</small>
       </div>
@@ -157,10 +130,10 @@
     </article>
 
     <article class="nearby-card" routerLink="/store/3">
-      <img src="/veneris.png" alt="Golden Crust">
+      <img src="/veneris.png" alt="Veneris Bakery">
 
       <div>
-        <h3>Golden Crust</h3>
+        <h3>Veneris Bakery</h3>
         <p>Bread · Mixed boxes</p>
         <small>2.1 km away</small>
       </div>
