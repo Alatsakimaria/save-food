@@ -311,3 +311,12 @@
 .rating-pill strong {
   font: inherit;
 }
+
+.save-button.active {
+  background: #783f0a;
+}
+
+.save-button.active svg {
+  fill: #fff4ea;
+  stroke: #fff4ea;
+}

@@ -12,6 +12,7 @@ interface StoreBox {
 }
 
 interface StoreDetailsData {
+  id: string;
   name: string;
   address: string;
   telephone: string;
@@ -25,6 +26,7 @@ interface StoreDetailsData {
 
 const STORE_DATA: Record<string, StoreDetailsData> = {
   '1': {
+    id: '1',
     name: 'Kritikos Fournos Bakery',
     address: '25 Ethnikis Antistaseos, Heraklion, Crete',
     telephone: '+30 2810 123456',
@@ -53,6 +55,7 @@ const STORE_DATA: Record<string, StoreDetailsData> = {
     ]
   },
   '2': {
+    id: '2',
     name: 'Sweet House Bakery',
     address: '8 1821 Street, Heraklion, Crete',
     telephone: '+30 2810 654321',
@@ -81,6 +84,7 @@ const STORE_DATA: Record<string, StoreDetailsData> = {
     ]
   },
   '3': {
+    id: '3',
     name: 'Veneris Bakery',
     address: '14 Knossou Avenue, Heraklion, Crete',
     telephone: '+30 2810 777888',
@@ -118,9 +122,37 @@ const STORE_DATA: Record<string, StoreDetailsData> = {
 })
 export class StoreDetails {
   store: StoreDetailsData;
+  isFavorite = false;
 
   constructor(route: ActivatedRoute) {
     const storeId = route.snapshot.paramMap.get('id') ?? '1';
     this.store = STORE_DATA[storeId] ?? STORE_DATA['1'];
+
+    this.checkFavorite();
+  }
+
+  checkFavorite() {
+    const favorites = JSON.parse(localStorage.getItem('favoriteStores') || '[]');
+
+    this.isFavorite = favorites.some(
+      (favoriteStore: StoreDetailsData) => favoriteStore.id === this.store.id
+    );
+  }
+
+  toggleFavorite() {
+    const favorites = JSON.parse(localStorage.getItem('favoriteStores') || '[]');
+
+    if (this.isFavorite) {
+      const updatedFavorites = favorites.filter(
+        (favoriteStore: StoreDetailsData) => favoriteStore.id !== this.store.id
+      );
+
+      localStorage.setItem('favoriteStores', JSON.stringify(updatedFavorites));
+      this.isFavorite = false;
+    } else {
+      favorites.push(this.store);
+      localStorage.setItem('favoriteStores', JSON.stringify(favorites));
+      this.isFavorite = true;
+    }
   }
 }
