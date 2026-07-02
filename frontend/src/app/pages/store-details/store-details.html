@@ -1,1 +1,95 @@
-<p>store-details works!</p>
+<div class="store-page">
+  <header class="page-top">
+    <button routerLink="/home" class="back-button" aria-label="Back to home">
+      <svg viewBox="0 0 24 24">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+
+    <button class="save-button" aria-label="Save store">
+      <svg viewBox="0 0 24 24">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/>
+      </svg>
+    </button>
+  </header>
+
+  <section class="store-hero">
+    <div class="store-logo">
+      <img [src]="store.image" [alt]="store.name">
+    </div>
+
+    <div class="store-info">
+      <p class="eyebrow">Bakery store</p>
+      <h1>{{ store.name }}</h1>
+
+      <div class="hero-meta">
+        <span class="rating-pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m12 2 2.9 6.1 6.7 1-4.8 4.7 1.1 6.6L12 17.2 6.1 20.4l1.1-6.6L2.4 9.1l6.7-1L12 2z"/>
+            </svg>
+            <strong>{{ store.rating }}</strong>
+        </span>
+        <span>Available now</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-info">
+    <div>
+      <span>Pickup</span>
+      <strong>{{ store.pickupHours }}</strong>
+    </div>
+
+    <div>
+      <span>Open</span>
+      <strong>{{ store.openingHours }}</strong>
+    </div>
+  </section>
+
+  <section class="about-card">
+    <h2>About</h2>
+    <p>{{ store.description }}</p>
+  </section>
+
+  <section class="boxes-section">
+    <div class="section-title">
+      <h2>Available boxes</h2>
+      <p>Reserve now and pay at the store.</p>
+    </div>
+
+    <article class="box-card" *ngFor="let box of store.boxes">
+      <div class="box-content">
+        <div>
+          <h3>{{ box.title }}</h3>
+          <p>{{ box.description }}</p>
+          <small>Pickup {{ box.pickupWindow }}</small>
+        </div>
+
+        <span>{{ box.quantity }}</span>
+      </div>
+
+      <div class="box-footer">
+        <div class="price">
+          <strong>€{{ box.price }}</strong>
+          <del>€{{ box.originalPrice }}</del>
+        </div>
+
+        <button>Reserve</button>
+      </div>
+    </article>
+  </section>
+
+  <section class="store-details-list">
+    <h2>Store information</h2>
+
+    <div class="info-row">
+      <span>Address</span>
+      <strong>{{ store.address }}</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Telephone</span>
+      <strong>{{ store.telephone }}</strong>
+    </div>
+  </section>
+</div>

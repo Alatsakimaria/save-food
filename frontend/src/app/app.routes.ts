@@ -5,6 +5,7 @@ import { Signup } from './pages/signup/signup';
 import { Home } from './pages/home/home';
 import { Search } from './pages/search/search';
 import { BestDeals } from './pages/best-deals/best-deals';
+import { StoreDetails } from './pages/store-details/store-details';
 
 
 export const routes: Routes = [
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'signup', component: Signup },
   { path: 'home', component: Home },
   { path: 'search', component: Search },
-  { path: 'best-deals', component: BestDeals }
+  { path: 'best-deals', component: BestDeals },
+  { path: 'store/:id', component: StoreDetails }
 ];
