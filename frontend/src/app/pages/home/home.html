@@ -1,12 +1,5 @@
 <div class="home-page">
   <header class="top-header">
-    <div class="location-icon">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11z"/>
-        <circle cx="12" cy="10" r="2.5"/>
-      </svg>
-    </div>
-
     <div class="location-text">
       <p class="eyebrow">Current location</p>
 
@@ -18,8 +11,11 @@
       </div>
     </div>
 
-    <button class="profile-button" aria-label="Save Food">
-      <img src="/logo.png" alt="Save Food">
+    <button class="brand-button" aria-label="SaveFood home">
+      <span class="brand-logo">
+        <img src="/logo.png" alt="SaveFood">
+      </span>
+      <span class="brand-name">SaveFood</span>
     </button>
   </header>
 
@@ -71,7 +67,7 @@
 
   <section class="section-header">
     <h2>Recommended for you</h2>
-    <a>See all</a>
+    <a routerLink="/best-deals">See all</a>
   </section>
 
   <div class="cards-row">
@@ -85,7 +81,12 @@
       <div class="card-body">
         <div class="title-row">
           <h3>{{ store.name }}</h3>
-          <span>{{ store.rating }}</span>
+          <span class="rating-pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m12 2 2.9 6.1 6.7 1-4.8 4.7 1.1 6.6L12 17.2 6.1 20.4l1.1-6.6L2.4 9.1l6.7-1L12 2z"/>
+            </svg>
+            <strong>{{ store.rating }}</strong>
+          </span>
         </div>
 
         <p>{{ store.description }}</p>

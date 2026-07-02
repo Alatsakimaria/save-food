@@ -7,8 +7,8 @@
     </button>
 
     <div>
-      <p>Save Food</p>
-      <h1>Today's Best Deals</h1>
+      <p>Top deals for you</p>
+      <h1>See all deals</h1>
     </div>
   </header>
 
@@ -35,7 +35,12 @@
       <div class="deal-content">
         <div class="deal-top">
           <span>{{ deal.discount }}</span>
-          <small>{{ deal.rating }}</small>
+          <small class="rating-pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m12 2 2.9 6.1 6.7 1-4.8 4.7 1.1 6.6L12 17.2 6.1 20.4l1.1-6.6L2.4 9.1l6.7-1L12 2z"/>
+            </svg>
+            <span>{{ deal.rating }}</span>
+          </small>
         </div>
 
         <h2>{{ deal.store }}</h2>
