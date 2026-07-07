@@ -6,6 +6,9 @@ import { Home } from './pages/home/home';
 import { Search } from './pages/search/search';
 import { BestDeals } from './pages/best-deals/best-deals';
 import { StoreDetails } from './pages/store-details/store-details';
+import { SurpriseBags } from './pages/surprise-bags/surprise-bags';
+import { BoxDetails } from './pages/box-details/box-details';
+
 
 
 export const routes: Routes = [
@@ -15,5 +18,7 @@ export const routes: Routes = [
   { path: 'home', component: Home },
   { path: 'search', component: Search },
   { path: 'best-deals', component: BestDeals },
-  { path: 'store/:id', component: StoreDetails }
+  { path: 'store/:id', component: StoreDetails },
+  { path: 'surprise-bags', component: SurpriseBags },
+  { path: 'box/:type', component: BoxDetails }
 ];

@@ -1,0 +1,15 @@
+<div class="bags-page">
+  <header>
+    <button routerLink="/home">‹</button>
+    <h1>Surprise Bags</h1>
+  </header>
+
+  <div class="bags-list">
+    <article class="bag-card" *ngFor="let bag of bags">
+      <p>{{ bag.available }}</p>
+      <h2>{{ bag.title }}</h2>
+      <span>{{ bag.description }}</span>
+      <strong>€{{ bag.price }}</strong>
+    </article>
+  </div>
+</div>
