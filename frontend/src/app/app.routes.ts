@@ -8,6 +8,7 @@ import { BestDeals } from './pages/best-deals/best-deals';
 import { StoreDetails } from './pages/store-details/store-details';
 import { SurpriseBags } from './pages/surprise-bags/surprise-bags';
 import { BoxDetails } from './pages/box-details/box-details';
+import { Favorites } from './pages/favorites/favorites';
 
 
 
@@ -20,5 +21,6 @@ export const routes: Routes = [
   { path: 'best-deals', component: BestDeals },
   { path: 'store/:id', component: StoreDetails },
   { path: 'surprise-bags', component: SurpriseBags },
-  { path: 'box/:type', component: BoxDetails }
+  { path: 'box/:type', component: BoxDetails },
+  { path: 'favorites', component: Favorites }
 ];

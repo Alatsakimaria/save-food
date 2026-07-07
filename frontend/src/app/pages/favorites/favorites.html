@@ -1,0 +1,39 @@
+<div class="favorites-page">
+  <header class="page-header">
+    <button routerLink="/home" class="back-button">‹</button>
+
+    <div>
+      <h1>Favorites</h1>
+      <p>Your saved bakeries</p>
+    </div>
+  </header>
+
+  <section class="empty-state" *ngIf="favoriteStores.length === 0">
+    <h2>No favorites yet</h2>
+    <p>Save bakeries by tapping the heart on a store page.</p>
+    <button routerLink="/home">Browse stores</button>
+  </section>
+
+  <section class="favorites-list" *ngIf="favoriteStores.length > 0">
+    <article
+      class="favorite-card"
+      *ngFor="let store of favoriteStores"
+      [routerLink]="['/store', store.id]"
+    >
+      <img [src]="store.image" [alt]="store.name">
+
+      <div>
+        <h2>{{ store.name }}</h2>
+        <p>{{ store.description }}</p>
+        <small>{{ store.pickupHours }}</small>
+      </div>
+
+      <button
+        class="remove-button"
+        (click)="removeFavorite(store.id); $event.stopPropagation()"
+      >
+        ×
+      </button>
+    </article>
+  </section>
+</div>
