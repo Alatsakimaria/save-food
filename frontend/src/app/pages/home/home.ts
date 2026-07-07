@@ -21,7 +21,7 @@ export class Home {
   stores = [
     {
       id: 1,
-      name: 'Sweet Corner Bakery',
+      name: 'Kritikos Fournos Bakery',
       image: '/kritikos.png',
       categories: ['Bread', 'Pastries', 'Sweets'],
       description: 'Bread · Pastries · Sweets',
@@ -33,7 +33,7 @@ export class Home {
     },
     {
       id: 2,
-      name: 'Morning Dough',
+      name: 'Sweet House Bakery',
       image: '/cup.png',
       categories: ['Sandwiches', 'Pastries'],
       description: 'Sandwiches · Pastries',
@@ -45,7 +45,7 @@ export class Home {
     },
     {
       id: 3,
-      name: 'Golden Crust',
+      name: 'Veneris Bakery',
       image: '/veneris.png',
       categories: ['Bread'],
       description: 'Bread · Mixed boxes',
